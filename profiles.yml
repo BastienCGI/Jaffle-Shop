@@ -1,0 +1,10 @@
+my_new_project:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: jaffle-s
+      dataset: dbt_bmonin
+      threads: 4
+      location: US
