@@ -3,6 +3,7 @@
     materialized = 'incremental',
     unique_key = 'order_id',
     incremental_strategy = 'merge',
+    on_schema_change='fail'
   )
 }}
 
@@ -11,7 +12,7 @@ with orders as  (
 ),
 
 payments as (
-    select * from {{ ref ('stg_stripe__payment') }}
+    select * from {{ ref ('stg_stripe__payments') }}
 ),
 
 order_payments as (
